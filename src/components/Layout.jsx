@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, Bell, Home, Coffee, ShoppingBag, User } from 'lucide-react';
+import { Menu, Bell, Home, Coffee, ShoppingBag, User, MessageSquare } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useCart } from '../context/CartContext';
 
@@ -33,6 +33,7 @@ export default function Layout() {
             <Link to="/menu" className={cn("transition-colors hover:text-primary", location.pathname === '/menu' ? "text-primary border-b-2 border-primary" : "text-primary/60")}>Menu</Link>
             <Link to="/cart" className={cn("transition-colors hover:text-primary", location.pathname === '/cart' ? "text-primary border-b-2 border-primary" : "text-primary/60")}>Cart</Link>
             <Link to="/profile" className={cn("transition-colors hover:text-primary", location.pathname === '/profile' ? "text-primary border-b-2 border-primary" : "text-primary/60")}>Profile</Link>
+            <Link to="/contact" className={cn("transition-colors hover:text-primary", location.pathname === '/contact' ? "text-primary border-b-2 border-primary" : "text-primary/60")}>Contact Us</Link>
             {isAdminScreen && (
               <Link to="/admin" className="text-primary border-b-2 border-primary">Admin</Link>
             )}
@@ -69,6 +70,10 @@ export default function Layout() {
           <Link to="/profile" className={cn("flex flex-col items-center justify-center transition-all duration-300 ease-out", location.pathname === '/profile' ? "bg-primary text-surface rounded-full w-12 h-12" : "text-primary opacity-50 hover:opacity-100")}>
             <User className="w-6 h-6" />
             {location.pathname !== '/profile' && <span className="font-label text-[10px] uppercase tracking-widest font-bold mt-1">Profile</span>}
+          </Link>
+          <Link to="/contact" className={cn("flex flex-col items-center justify-center transition-all duration-300 ease-out", location.pathname === '/contact' ? "bg-primary text-surface rounded-full w-12 h-12" : "text-primary opacity-50 hover:opacity-100")}>
+            <MessageSquare className="w-6 h-6" />
+            {location.pathname !== '/contact' && <span className="font-label text-[10px] uppercase tracking-widest font-bold mt-1">Contact</span>}
           </Link>
         </nav>
       )}

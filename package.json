@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ddkhoa0123.github.io/project-frontend",
+  "homepage": "https://ddkhoa0123.github.io/ProjectFrE",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "dev": "vite",
